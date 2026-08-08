@@ -127,7 +127,7 @@ def predict():
                 fallback_rec = "Consult a specialist for early management and targeted treatment."
 
             recommendation = fallback_rec
-            api_key = os.environ.get("GEMINI_API_KEY", "AQ.Ab8RN6Jy16RiK3mGruNtjkwznamWpQ2gNLuKRtO6iojCpNMpow")
+            api_key = os.environ.get("GEMINI_API_KEY", "paste yor gemini api key here")
             
             if api_key:
                 try:
