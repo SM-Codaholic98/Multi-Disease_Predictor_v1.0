@@ -1,0 +1,232 @@
+:root {
+    --bg-color: #f0f4f8;
+    --card-bg: rgb(0, 0, 0, 0.7);
+    --text-main: rgb(255, 195, 85);
+    --text-light: rgb(255, 255, 255);
+    --primary: rgb(255, 195, 85);
+    --primary-hover: rgb(255, 165, 0);
+
+    /* Status Colors */
+    --good: #48bb78;
+    --warning: #ed8936;
+    --danger: #e53e3e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url('shutterstock_1576424071-1.jpg');
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 0.5s ease-in-out;
+    padding: 2rem;
+}
+
+.container {
+    background: var(--card-bg);
+    max-width: 900px;
+    width: 100%;
+    padding: 40px 50px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    color: var(--primary);
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: var(--text-light);
+}
+
+/* Model Selection Area */
+.model-selection-wrapper {
+    background: rgb(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--primary);
+}
+
+.model-selection-wrapper label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #007bff;
+}
+
+.model-selection-wrapper select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid orange;
+    border-radius: 12px;
+    font-size: 1rem;
+    background-color: rgb(255, 195, 85);
+    cursor: pointer;
+}
+
+/* Form Grid Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--text-main);
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: 0.3s;
+    background: rgb(248, 250, 252, 0.7);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary);
+    color: rgb(54, 11, 11);
+    border: none;
+    border-radius: 100px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Prediction Result UI */
+.result-container {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.result-card {
+    font-size: 1.3rem;
+    padding: 2rem;
+    border-radius: 15px;
+    border-top: 8px solid var(--primary);
+}
+
+.model-used {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.model-used span {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.battery-visual h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+
+.action-box {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: #f7fafc;
+}
+
+.action-box h3 {
+    color: var(--text-light);
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.recommendation-text {
+    font-size: 2.1rem;
+    font-weight: 600;
+}
+
+.back-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 25px;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: var(--primary);
+    color: rgb(54, 11, 11);
+}
+
+/* Dynamic Status Colors for Results Page */
+.status-good .battery-visual h1,
+.status-good .recommendation-text {
+    color: var(--good);
+}
+
+.status-good {
+    border-top-color: var(--good);
+}
+
+.status-warning .battery-visual h1,
+.status-warning .recommendation-text {
+    color: var(--warning);
+}
+
+.status-warning {
+    border-top-color: var(--warning);
+}
+
+.status-danger .battery-visual h1,
+.status-danger .recommendation-text {
+    color: var(--danger);
+}
+
+.status-danger {
+    border-top-color: var(--danger);
+}

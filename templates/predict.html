@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-image: url('{{ url_for('static', filename='shutterstock_1647922051.webp') }}');">
+    <div class="container result-container">
+        <div class="result-card {{ status_class }}">
+            <h2>Diagnostics Complete</h2>
+            <p class="model-used">Engine: <span>{{ model_name }}</span></p>
+
+            <div class="battery-visual">
+                <h1 style="font-size: 2.5rem; margin-bottom: 10px;">{{ prediction }}</h1>
+                <p>Predicted Diseases</p>
+            </div>
+
+            <div class="action-box">
+                <h3 style="color: #007bff; font-weight: bold; font-size: 1.2rem;">{{ icon }} Recommended Action:</h3>
+                <h2 class="recommendation-text" style="font-size: 1.4rem;">{{ recommendation }}</h2>
+            </div>
+
+            <a href="/" class="back-btn">Evaluate New Patient</a>
+        </div>
+    </div>
+</body>
+
+</html>
